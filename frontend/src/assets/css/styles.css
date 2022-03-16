@@ -1,0 +1,1258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+
+input:focus, input:hover, button:hover, button:active, button:focus, textarea:focus, textarea:hover, textarea{
+    box-shadow: none !important;
+    outline: none;
+    resize: none !important;
+}
+a, a:hover{
+    text-decoration:none;
+    color: #000;
+}
+
+:root {
+    --body-background: #F6F6F6;
+    --text-color: #000;
+    --right-side-background: #F9F9F9;
+    --bubble-opponent: #F2F2F2;
+    --bubble-you: hsla(183, 57%, 46%, 1);
+    --name-opponent: hsla(183, 57%, 46%, 1);
+    --name-you: #000;
+    --overflow-background: #000;
+    --opposite-background: rgba(0, 0, 0, 0.15);
+    --opposite-text: #fff;
+    --folder-background: rgba(0, 0, 0, 0.1);
+    --bg-section-theme: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("https://cdn.discordapp.com/attachments/747842649892978861/951407181134196746/20220310_155835_opacity.png");
+}
+  
+[data-theme="light"] {
+    --body-background: #F6F6F6;
+    --text-color: #000;
+    --right-side-background: #F9F9F9;
+    --bubble-opponent: #F2F2F2;
+    --bubble-you: hsla(183, 57%, 46%, 1);
+    --name-opponent: hsla(183, 57%, 46%, 1);
+    --name-you: #000;
+    --overflow-background: #000;
+    --opposite-background: rgba(0, 0, 0, 0.15);
+    --opposite-text: #fff;
+    --folder-background: rgba(0, 0, 0, 0.1);
+    --bg-section-theme: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("https://cdn.discordapp.com/attachments/747842649892978861/951407181134196746/20220310_155835_opacity.png");
+}
+  
+[data-theme="dark"]{
+    --body-background: #2D2B3F;
+    --text-color: #fff;
+    --right-side-background: #1D1E22;
+    --bubble-opponent: #2D2B3F;
+    --bubble-you: hsla(183, 57%, 46%, 1);
+    --name-opponent: hsla(183, 57%, 46%, 1);
+    --name-you: #000;
+    --overflow-background: #fff;
+    --opposite-background: rgba(255, 255, 255, 0.25);
+    --opposite-text: #000;
+    --folder-background: rgba(255, 255, 255, 0.1);
+    --bg-section-theme: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.discordapp.com/attachments/747842649892978861/951407590703783978/20220310_155941_opacity.png");
+}
+
+.text-primary{
+    color: #326DBA !important;
+    --bg-section-theme: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.discordapp.com/attachments/747842649892978861/951407590703783978/20220310_155941_opacity.png");
+}
+
+.overflowCustom::-webkit-scrollbar {
+    width: 3px;
+}
+.overflowCustom::-webkit-scrollbar-track {
+    background: var(--body-background); 
+}
+.overflowCustom::-webkit-scrollbar-thumb {
+    background: var(--overflow-background);
+    border-radius:100px;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.reactTooltip{
+    z-index: 100;
+}
+
+/*Home css*/
+.flexBox {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.connectionAlert{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #fff;
+    width: 300px;
+    padding: 10px;
+    opacity: 0.5;
+    transition: 0.7s;
+    z-index: 10000;
+}
+
+.connectionAlert:hover{
+    opacity: 1;
+}
+
+.connectionAlert p{
+    font-size: 13px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.connectionAlert span{
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+.mainBox .leftSide{
+    width: 30%;
+    height: 100vh;
+    background: var(--body-background);
+}
+
+.mainBox .leftSide .fixed-top{
+    width: 30%;
+}
+
+.mainBox .boxProfile{
+    width: 100%;
+    padding: 10px;
+    background: var(--body-background);
+    color: var(--text-color);
+}
+
+.mainBox .boxProfile img{
+    width: 35px;
+    height: 35px;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.mainBox .boxProfile .profileAddress{
+    font-size: 12px;
+}
+
+.mainBox .boxProfile .profileBalance{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.mainBox .boxProfile .profileBalance img{
+    margin-top: -2px;
+    height: 12px;
+    width: 12px;
+    border: 0;
+    display: inline-block;
+}
+
+.mainBox .boxProfile .profileBalance span{
+    font-size: 11px;
+    opacity: 0.8;
+    display: inline-block;
+}
+
+.mainBox .boxProfile i{
+    font-size: 15px;
+    margin: 6px 2px 0 2px;
+    cursor: pointer;
+}
+
+.mainBox .searchInput{
+    margin-top: 0px;
+    width: 100%;
+    padding: 10px;
+    background: var(--body-background);
+}
+
+.mainBox .searchInput input{
+    border-radius: 20px;
+    width: 100%;
+    border: 1px solid grey;
+    padding: 5px 10px;
+    background: var(--body-background);
+    color: var(--text-color);
+    font-size: 12px;
+}
+
+.boxProfile p{
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.mainBox .rightSide{
+    width: 70%;
+    background: var(--right-side-background);
+    height: 100vh;
+}
+
+.boxModal {
+    border-radius: 12px !important;
+}
+
+.notificationAlert{
+    position: absolute;
+    right: 55px;
+    top: -5px;
+    cursor: pointer;
+}
+
+.forDropDown .markAsRead{
+    font-size:13px;
+    float: right;
+    margin: -2px 10px 5px 0;
+    cursor: pointer;
+}
+
+.forDropDown .notificationCount{
+    font-size:13px;
+    margin-left: 10px;
+    position: absolute;
+}
+
+.notifications{
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 350px;
+    width: 100%;
+}
+
+.notificationList .flexBox{
+    padding: 5px;
+    width: 320px;
+}
+
+.notificationList .flexBox div i{
+    font-size: 20px;
+    position: relative;
+    top: 20px;
+}
+
+.notificationList .flexBox div .opacity-50{
+    font-size: 12px;
+}
+
+.notificationList .flexBox div .readNotification:hover{
+    color: green !important;
+    opacity: 0.55;
+}
+
+.notificationList .flexBox div p, .notificationList .flexBox div .notificationMessage{
+    margin: 2px 0 2px 25px;
+    font-size: 14px;
+    width: 300px;
+}
+
+.notificationWarning{
+    width: 320px;
+}
+
+.notificationWarning .bi{
+    font-size: 45px !important;
+    margin-bottom: 10px;
+}
+
+.notificationWarning p{
+    margin: 2px 0 2px 0;
+    font-size: 14px;
+}
+
+.notificationWarning .opacity-50{
+    font-size: 13px;
+}
+
+/* user list css */ 
+.userList {
+    padding-top: 110px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.userListHistory {
+    padding-top: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.userList .row {
+    margin-top: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 12px 10px 0px 10px;
+    cursor: pointer;
+    color: var(--text-color);
+    background: var(--body-background);
+    transition: 0.7s;
+}
+
+.userList .row:hover {
+    background-color: rgba(0,0,0,0.15);
+}
+
+.userListActive{
+    background: rgba(0,0,0,0.15) !important;
+}
+
+.userList .row .boxProfileList {
+    width: 50px;
+    height: 50px;
+    padding-right: 10px;
+}
+
+.userList .row .boxProfileList img{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
+
+.userList .row .col-10 .profileList{
+    display: flex;
+    flex-wrap: nowrap;
+    height: 20px;
+}
+
+.userList .row .col-10 .profileList b {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    width: 100%;
+    font-size: 12px;
+}
+
+.userList .row .col-10 .profileList p {
+    font-size: 11px;
+    padding-top: 1px;
+    padding-left: 15px;
+}
+
+.userList .row .col-10 .chatList .text-muted {
+    white-space: nowrap; 
+    width: 100%; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+.borderSend {
+    border-radius: 12px;
+}
+
+/* Modal */
+.settingsModal, .modalUpload{
+    background-color: var(--body-background);
+    color: var(--text-color);
+}
+
+.settingsModal .settings, .modalUpload .title{
+    font-size: 18px;
+}
+
+.settingsModal div .sectionTitle{
+    font-size: 16px;
+}
+
+.settingsModal .photoProfile .nftList{
+    display: flex;
+    overflow-x: auto;
+}
+
+.settingsModal .photoProfile .nftList::-webkit-scrollbar {
+    height: 3px;
+}
+
+.settingsModal .photoProfile .nftList div{
+    display: inline-block;
+    margin: 0 7px 20px 7px;
+    transition: 0.7s;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.settingsModal .photoProfile .nftList div:hover{
+    background-color: rgba(0,0,0,0.15);
+}
+
+.settingsModal .photoProfile .nftList div img{
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.settingsModal .photoProfile .nftList div p{
+    font-size: 14px;
+    margin: 15px 0 0 0;
+}
+
+.settingsModal .photoProfile .nftList div button{
+    margin-top: 10px;
+}
+
+.settingsModal .blockList .addressList{
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.settingsModal .blockList .addressList .flexBox{
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.settingsModal .blockList .addressList .flexBox p{
+    margin: 5px 0 0 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/*user chat*/
+.rightBox{
+    overflow: hidden;
+    height: 100vh;
+}
+
+.bodyNft{
+    max-height: 30em;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.iconSearch{
+    display: relative;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.rightBox .searchBox{
+    position: absolute;
+    height: 100vh;
+    width: 300px;
+    background: var(--body-background);
+    z-index: 101;
+    right: 0;
+    padding: 10px;
+    color: var(--text-color);
+}
+
+.rightBox .searchBox .headerSearch{
+    position: fixed;
+    width: 285px;
+    background: var(--body-background);
+}
+
+.rightBox .searchBox .headerSearch input{
+    border-radius: 35px;
+    width: 100%;
+    padding: 5px 10px 5px 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid grey;
+}
+
+.rightBox .searchBox .headerSearch span{
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.rightBox .searchBox .headerSearch i{
+    font-size: 16px;
+}
+
+.rightBox .searchBox .listSearch{
+    padding-top: 80px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.searchList{
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.searchList:hover{
+    background: rgba(0,0,0,0.15);
+}
+
+.searchList .addressSearch{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.searchList .messageSearch{
+    font-size: 14px;
+    margin-bottom: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.searchList span{
+    font-size: 12px;
+    margin-bottom: -12px;
+    position: relative;
+    float: right;
+}
+
+.rightBox .chatHeadSearch{
+    z-index: 100;
+    margin-bottom: 20px;
+}
+
+.rightBox .chatHeadSearch, .rightBox .inputChat{
+    padding: 10px;
+    width: 33%;
+    padding-right: 10px;
+    height: 55px;
+    margin-top: 1%;
+    position: fixed;
+    border-radius: 15px;
+    z-index: 100;
+    background: var(--body-background);
+    color: var(--text-color);
+}
+
+.rightBox .chatHeadSearch .bi-arrow-left{
+    font-size: 17px;
+    margin-right: 10px;
+    margin-top: 5px;
+    display: none;
+}
+
+.rightBox .chatHeadSearch img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.rightBox .chatHeadSearch div{
+    margin-top: 3px;
+}
+
+.rightBox .chatHeadSearch .bi-record-circle-fill, .mainBox .boxProfile .bi-record-circle-fill{
+    position: absolute;
+    font-size: 13px;
+    margin-top: 18px;
+    margin-left: 25.5px;
+    color: var(--body-background)
+}
+
+.rightBox .chatHeadSearch .bi-circle-fill, .mainBox .boxProfile .bi-circle-fill{
+    position: absolute;
+    font-size: 10px;
+    margin-top: 20px;
+    margin-left: 27px;
+}
+
+.rightBox .chatHeadSearch .rightIcon{
+    position: absolute;
+    margin-top: 5px;
+    right: 10px;
+    cursor: pointer;
+    display: relative;
+}
+
+.inputChatSearch{
+    position: fixed;
+    float: left;
+    width: 35%;
+    margin-bottom: 1%;
+    padding: 10px;
+    bottom: 0px;
+    background: var(--body-background);
+    color: var(--text-color);
+}
+
+
+.rightBox .chatHeadSearch span {
+    font-size: 12px;
+    margin-left: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 90%;
+    margin-top: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.rightBox .chatHead{
+    z-index: 100;
+}
+
+.senderButton {
+    padding-top: 5px;
+    display: none;
+}
+
+.rightBox .chatHead, .rightBox .inputChat{
+    padding: 10px;
+    width: 67%;
+    height: 55px;
+    right: 1.5%;
+    margin-top: 1%;
+    border-radius: 15px;
+    position: fixed;
+    z-index: 100;
+    background: var(--body-background);
+    color: var(--text-color);
+}
+
+.rightBox .inputChat .typeChat{
+    background: red;
+}
+
+.rightBox .chatHead .bi-arrow-left{
+    font-size: 17px;
+    margin-right: 10px;
+    margin-top: 5px;
+    display: none;
+}
+
+.rightBox .chatHead img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.imgProfile {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+}
+
+.rightBox .chatHead div{
+    margin-top: 0;
+}
+
+.rightBox .chatHead .bi-record-circle-fill, .mainBox .boxProfile .bi-record-circle-fill{
+    position: absolute;
+    font-size: 13px;
+    margin-top: 18px;
+    margin-left: 25.5px;
+    color: var(--body-background)
+}
+
+.rightBox .chatHead .bi-circle-fill, .mainBox .boxProfile .bi-circle-fill{
+    position: absolute;
+    font-size: 10px;
+    margin-top: 20px;
+    margin-left: 27px;
+}
+
+.rightBox .chatHead .rightIcon{
+    position: absolute;
+    margin-top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.rightBox .chatHead span {
+    font-size: 12px;
+    margin-left: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 90%;
+    margin-top: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.bubbleChatBox {
+    padding-top: 55px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 100%;
+    padding-bottom: 100px;
+    scroll-behavior: smooth;
+}
+
+.bubbleChatBox .rounded-pill {
+    margin-bottom: -20px;
+    border-bottom: 2px;
+    margin-left: 20px;
+    z-index: 1;
+}
+
+.bubbleChatBox .opponent {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bubbleChatBox .opponent img, .bubbleChatBox .you img {
+    width: 40px;
+    padding-left: 2px;  
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 50%;
+}
+
+.bubbleChatBox .opponent div div{
+    background-color: var(--bubble-opponent);
+    color: var(--text-color);
+    border-radius: 15px;
+    max-width: 70%;
+    word-break: break-all;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.bubbleChatBox .opponent div div b{
+    color: var(--name-opponent);
+    font-family: 'Rubik', sans-serif;
+    font-weight: normal;
+}
+
+.bubbleChatBox .opponent span{
+    color: var(--text-color);
+    font-family: 'Rubik', sans-serif;
+    opacity: 0.7;
+    font-size: 11px;
+    position: relative;
+    margin-top: 55px;
+    margin-left: -34px;
+}
+
+.bubbleChatBox .you div div b{
+    color: var(--name-you);
+    font-family: 'Rubik', sans-serif;
+    font-weight: normal;
+}
+
+.bubbleChatBox .you span{
+    color: var(--text-color);
+    font-family: 'Rubik', sans-serif;
+    font-size: 11px;
+    position: relative;
+    margin-left: -56px;
+    margin-right: 30px;
+    margin-top: 55px;
+    opacity: 0.7;
+}
+
+.bubbleChatBox .you .bi-check-all, .bubbleChatBox .you .bi-check{
+    margin-left: -77px;
+    margin-top: 30px;
+    margin-right: 50px;
+}
+
+.bubbleChatBox .you .bi-circle-fill{
+    margin-left: -65px;
+    margin-right: 60px;
+    margin-top: 30px;
+    color: var(--body-background);
+}
+
+.bubbleChatBox .opponent div div p, .bubbleChatBox .you div div p{
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+.bubbleChatBox .you {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    justify-content: right;
+}
+
+.bubbleChatBox .you div div{
+    background-color: var(--bubble-you);
+    color: var(--text-color);
+    border-radius: 15px;
+    min-width: 170px;
+    max-width: 70%;
+    word-break: break-all;
+    float: right;
+    margin-right: -25px;
+    padding: 10px;
+    font-size: 13px;
+    right: 107px;
+}
+
+.rightBox .inputChat{
+    position: fixed;
+    width: 100%;
+    right: 0;
+    width: 67%;
+    right: 1.5%;
+    margin-bottom: 1%;
+    padding: 10px;
+    height: 70px;
+    bottom: 0px;
+    background: var(--body-background);
+    color: var(--text-color);
+}
+
+.boxSearchChat{
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* announce */
+.beforeConnect{
+    padding-top: 10%;
+}
+
+
+.bgGrey {
+    border-radius: 200px;
+    display: relative;
+}
+
+.bgSection {
+    background-image: var(--bg-section-theme);
+    background-repeat: auto;
+    background-size: 25%;
+    background-position:center;
+    overflow-y: hidden;
+    min-height: 55em;
+}
+
+.boxWelcome {
+    background-color: red;
+}
+
+.headAnnounce {
+    font-size: 46px;
+    color: var(--text-color);
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.headAnnounce2 {
+    font-size: 36px;
+    color: var(--text-color);
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
+.textAnnounce {
+    color: var(--text-color);
+}
+
+
+
+/* starting */
+.semiHeadFont {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.headFont {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.startingBox {
+    padding-top: 20%;
+}
+
+.startingBox .boxText{
+    border-radius: 12px !important;
+    background: var(--body-background);
+    color: var(--text-color);
+}
+
+.normalFont {
+    font-size: 14px !important;
+    color: var(--text-color);
+}
+
+.normalFont3 {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.bgFlexible{
+    background: var(--body-background)
+}
+
+.normalFont2 {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.smallFont {
+    font-size: 10px;
+    color: var(--text-color);
+}
+
+
+.dropdown-toggle::after {
+    display: none !important; 
+  }
+
+.forDropDown {
+    margin-top: 2px;
+}
+
+.dots3 {
+    color: var(--text-color);
+}
+
+.modal {
+    display: block !important;
+}
+
+/* faq */
+
+.boxFaq {
+    padding-top: 20px;
+    padding-left: 200px;
+    padding-right: 80px;
+}
+
+.modalUpload .uploadDiv{
+    width: 100%;
+    height: 200px;
+    border: 1px dashed var(--bubble-you);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.modalUpload p{
+    font-size: 14px;
+}
+
+.modalUpload .uploadDiv span{
+    position: absolute;
+}
+
+.modalUpload .uploadDiv input[type="file"]{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    outline: none !important;
+    opacity: 0;
+}
+
+.ipfsDiv{
+    background: var(--body-background);
+    color: var(--text-color);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+}
+
+.ipfsDiv .menu{
+    width: 60px;
+    background: #33B4BA;
+    color: #000;
+    padding: 10px;
+    height: 100vh;
+    transition: 0.7s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.ipfsDiv .menu div{
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.7s;
+    border-radius: 50px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.ipfsDiv .menu div i{
+    font-size: 20px;
+    transition: 0.7s;
+}
+
+.ipfsDiv .menu div span{
+    display: none;
+    margin-left: 5px;
+    position: absolute;
+    margin-top: 5px;
+    transition: 0.7s;
+}
+
+.ipfsDiv .menu:hover{
+    width: 150px;
+}
+
+.ipfsDiv .menu:hover .titleMenu{
+    display: inline-block;
+}
+
+.ipfsDiv .menu div:hover{
+    background: rgba(255,255,255,0.15);
+}
+
+.ipfsMenuActive{
+    background: rgba(255,255,255,0.15);
+}
+
+.ipfsDiv .menu div:hover > .ipfsHeader{
+    padding: 10px 10px 10px 170px;
+}
+
+.ipfsDiv .ipfsHeader{
+    width: 100%;
+    background: #33B4BA;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px 10px 10px 80px;
+    color: #000;
+}
+
+.ipfsDiv .ipfsHeader .bi-search{
+    margin-right: -30px;
+}
+
+.ipfsDiv .ipfsHeader input{
+    padding: 7px 7px 7px 40px;
+    border-radius: 5px;
+    margin: 0 5px 0 0;
+    width: 100%;
+    background: rgba(255,255,255,0.3);
+    color: #000;
+}
+
+.ipfsDiv .ipfsHeader input ::placeholder{
+    color: red;
+}
+
+.ipfsDiv .ipfsHeader i{
+    font-size: 20px;
+    margin: 5px 5px 0 5px;
+    cursor: pointer;
+}
+
+.ipfsDiv .ipfsHeader .forDropDown{
+    margin-bottom: -5px;
+}
+
+.ipfsDiv .ipfsHeader .ipfsProfile{
+    width: 280px;
+}
+
+.ipfsDiv .ipfsHeader img{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.ipfsDiv .ipfsHeader .ipfsProfileAddress{
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    width: 260px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.ipfsDiv .ipfsBody{
+    padding: 20px 20px 20px 80px;
+    color: var(--text-color);
+    overflow: auto;
+    height: 100%;
+    padding-bottom: 60px;
+}
+
+.ipfsDiv .ipfsBody .alert{
+    font-size: 14px;
+}
+
+.folderList{
+    padding: 10px;
+    background: var(--folder-background);
+    width: 100%;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.7s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.folderList:hover{
+    opacity: 0.7;
+}
+
+.addFolder{
+    padding: 10px;
+    background: var(--folder-background);
+    width: 100%;
+    border-radius: 7px;
+    cursor: normal;
+    transition: 0.7s;
+    width: 100%;
+}
+
+.addFolder input{
+    background: transparent;
+    font-size: 14px;
+    width: 80%;
+    display: inline-block;
+}
+
+.addFolder:hover{
+    opacity: 1;
+}
+
+.folderList i, .addFolder i{
+    margin-right: 10px;
+}
+
+.fileList{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid var(--opposite-background);
+    transition: 0.7s;
+    cursor: pointer;
+}
+
+.fileList:hover{
+    opacity: 0.7;
+}
+
+.fileList p{
+    margin-top: 1px;
+    margin-bottom: 0;
+    font-size: 14px;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.fileList i{
+    margin-right: 5px;
+}
+
+/* media screen responsive */
+@media only screen and (max-width: 700px) {
+    .mainBox .leftSide, .mainBox .rightSide, .rightBox .flexBox, .rightBox .inputChat, .mainBox .leftSide .fixed-top {
+        width: 100%;
+        border-radius: 0;
+        right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+
+    .bgSection {
+        background-size: 60%;
+    }
+
+    .bgGrey {
+        border-radius: 200px;
+        display: none;
+    }
+
+    .headAnnounce {
+        font-size: 32px;
+        color: var(--text-color);
+        font-weight: bold;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .headAnnounce2 {
+        font-size: 26px;
+        color: var(--text-color);
+        font-weight: bold;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .normalFont {
+        font-size: 10px;
+        color: var(--text-color);
+    }
+
+    .iconSearch{
+        display: none;
+    }
+
+    .rightBox .chatHead .bi-record-circle-fill{
+        margin-left: 53.5px;
+    }
+
+    .rightBox .chatHead .bi-circle-fill{
+        margin-left: 55px;
+    }
+
+    .rightBox .chatHead span {
+        width: 70%;
+    }
+
+    .senderButton {
+        padding-top: 5px;
+        display: block;
+    }
+
+    .bubbleChatBox {
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    .bubbleChatBox .you .bi-check-all, .bubbleChatBox .you .bi-check{
+        margin-left: -77px;
+    }
+
+    .mainBox .rightSide{
+        display: none;
+    }
+
+    .rightBox .flexBox .bi-arrow-left{
+        display: block;
+    }
+
+    /* announce */
+    .beforeConnect{
+        padding-top: 20%;
+    }
+    .iconSearch{
+        display: block;
+        margin-left: 10px;
+    }
+}
