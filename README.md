@@ -1,3 +1,8 @@
+# About
+## Original repo
+- Front-end: https://github.com/azfarwisnu/Riptide-Solana-Hackathon
+- Back-end: https://github.com/ilhamm02/riptide-hackathon-backend
+
 # How to Install
 1. Install Node.js (tested on v16.14.0)
 2. Install NPM (tested on 8.3.1)
