@@ -4,8 +4,8 @@
 - Back-end: https://github.com/ilhamm02/riptide-hackathon-backend
 
 # How to Install
-1. Install Node.js (tested on v16.14.0)
-2. Install NPM (tested on 8.3.1)
+1. Install Node.js (tested on v16.14.0 and v17.7.1)
+2. Install NPM (tested on 8.3.1 and 8.5.2)
 
 ## Back-end
 1. Build IPFS node and open port for gateway and API (If API in different location)
