@@ -27,6 +27,8 @@ ipfsEndpoint = ${IPFS_NODE}
 5. Create temporary disrectory for uploading file to IPFS node. Named `temp`
 6. Edit origin cors of socket on index.js with front-end ip/domain
 7. Run
+8. Go to `fetcher` folder and edit `fetcher.py` to get on-chain notification
+9. Run `fetcher.py` with python3
 
 ## Front-end
 1. Edit `API_URL` and `IPFS_GATEWAY` variables on `src/contants/API.js` with your setup before
